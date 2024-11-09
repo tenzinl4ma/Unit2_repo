@@ -3,6 +3,7 @@
 
 # Question
 
+<img width="691" alt="quiz_024_slide" src="https://github.com/user-attachments/assets/b9176a48-019b-4e00-b2ce-b60fceefb3e9">
 
 # Code
 ```.py
