@@ -3,6 +3,7 @@
 
 # Question
 
+<img width="690" alt="quiz_022_slide" src="https://github.com/user-attachments/assets/568348ea-cb48-4db7-a890-66ce264678bb">
 
 
 # Code
