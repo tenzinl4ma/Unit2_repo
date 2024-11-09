@@ -15,17 +15,17 @@ x, y = [], []
 start = -10
 step = 0.01
 
-# Generating x and y values for the parabola
+
 for i in range(int(20 / step)):
     x_val = start + i * step
     x.append(x_val)
     y.append(2 * (x_val + 5) ** 2)
 
-# Define line x and y values for additional plot (e.g., a vertical line)
+
 linex = [-5, -5]
 liney = [0, max(y)]
 
-# Plotting the parabola
+
 tu.plot(x, y, linewidth=2, color="red", label="Parabola")
 tu.plot(linex, liney, linewidth=2, color="blue", linestyle="--", label="Vertical line")
 
