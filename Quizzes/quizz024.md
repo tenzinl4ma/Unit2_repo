@@ -9,7 +9,6 @@
 ```.py
 import matplotlib.pyplot as plt
 
-# Define the data dictionary
 data = {
     'x': [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19],
     'y': [24, 1, 2, 25, 26, 21, 23, 34, 49, 2, 19, 32, 7, 17, 36, 7, 45, 28, 40, 46]
@@ -17,16 +16,8 @@ data = {
 
 
 data["title"] = "quiz_data_science"
-
 plt.plot(data['x'], data['y'], color="red", marker='o', linestyle='-')
-plt.title(data["title"])
-plt.xlabel("X values")
-plt.ylabel("Y values")
 plt.show()
-
-
-
-
 ````
 
 
