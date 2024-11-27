@@ -23,7 +23,7 @@ Considering the budgetary constraints and hardware requirements, the proposed so
 
 <h5> Design Statement</h5>
 
-Design Statement
+
 To investigate the environmental factors impacting the sleep quality of residents in Room R2-14, we will deploy an Arduino-based distributed weather station that monitors temperature, humidity, and air pressure. The DHT11 sensor will be used to measure temperature and humidity, while a BMP180 or similar sensor will measure air pressure. The data will be collected over a 48-hour period to identify patterns that might correlate with the residents' sleep behaviors.
 
 The collected data will be processed using Python in PyCharm, where we will create visualizations using the matplotlib library to analyze the environmental conditions and their potential effects on sleep quality. The goal of this project is to provide insights into how temperature, humidity, and pressure may be influencing sleep patterns and to suggest possible adjustments that could improve the residents' sleep environment, helping them achieve better sleep quality, productivity, and focus throughout the day.
@@ -37,3 +37,30 @@ The collected data will be processed using Python in PyCharm, where we will crea
 5. ```(SL)```The Local samples are stored in a csv file and ```(HL)``` posted to the remote server as a backup.
 6. The solution provides a prediction for the subsequent 12 hours for both temperature and humidity.
 7. The solution includes a poster summarizing the visual representations, model and analysis created. The poster includes a recommendation about healthy levels for Temperature and Humidity.
+## TOK Connection for the Sleep Quality Project
+
+### To what extent does the use of data science in climate research influence our understanding of environmental issues, and what knowledge questions arise regarding the reliability, interpretation, and ethical implications of data-driven approaches in addressing climate change?
+
+Data science plays a crucial role in climate research, as it allows for the collection and analysis of large amounts of data from different regions, periods, and environmental conditions. This data-driven approach helps us gain a deeper understanding of climate change patterns and trends that would be difficult to observe through simple observation. By using sensors and monitoring technologies to collect data on temperature, humidity, and air pressure, we can accurately analyze how these variables influence various aspects of our environment, including sleep quality.
+
+However, challenges arise regarding the reliability of the data and the interpretation of results. For example, if data is not collected from a broad enough sample size or if sensor accuracy is questionable, the conclusions we draw could be misleading. There is also an ethical dilemma when collecting and analyzing data related to people's personal environments—ensuring that the data is collected and used responsibly and with consent is paramount. Ultimately, data science provides valuable insights into environmental issues, but the quality and ethical handling of the data must be carefully considered.
+
+## 1. How does our use of technology shape our understanding of the environment?
+
+Technology enhances our ability to understand the environment by allowing us to gather objective, precise data that goes beyond our natural sensory perception. In the case of this project, sensors like the DHT11 and BMP180 provide quantitative measurements of temperature, humidity, and air pressure, which are difficult to assess accurately without such technology. By collecting and analyzing this data, we can understand environmental factors that influence sleep quality, such as room temperature and humidity.
+
+Technology helps us move beyond subjective perceptions and gain a more accurate, data-driven understanding of our surroundings. Unlike relying on personal judgment, which can be biased or influenced by prior experiences, technology offers consistency and reliability, improving our ability to identify trends and correlations. For example, while we may feel a room is warm or cold based on intuition, the sensor data offers a much clearer picture, leading to better decisions about how to adjust our living conditions for better sleep.
+
+## 2. What responsibilities do we have as technologists when it comes to handling personal data related to our living spaces?
+
+As technologists, we have a responsibility to respect privacy and handle personal data with transparency and care. In this project, the residents of Room R2-14 have consented to having their environmental data collected and analyzed to determine the potential impact on their sleep quality. Technologists must ensure that the data is used for its intended purpose and that it is kept secure. This includes informing individuals about the nature of the data being collected, how it will be used, who will have access to it, and how long it will be retained.
+
+Additionally, technologists must uphold the trust that is placed in them when collecting such data. In this project, all participants have given informed consent, and the data will only be used for improving the residents' sleep environment. Technologists must take appropriate steps to protect the data and ensure that it is not exploited for malicious purposes or shared without consent.
+
+## 3. What cultural and contextual factors might impact our interpretation of the results, especially when comparing our local readings with those from other rooms or locations on campus?
+
+Cultural and contextual factors play an important role in how we interpret environmental data. People from different cultural backgrounds may have varying perceptions of what constitutes "comfortable" or "uncomfortable" environmental conditions. For example, students who are used to warmer climates may find 20°C chilly, while those from colder regions may feel it is quite comfortable. This cultural perception can impact how the data is interpreted—what one person considers a "good" temperature for sleep might be seen as too cold or too warm by someone else.
+
+Contextually, the interpretation of data can also be influenced by personal biases. If a resident believes their room is too cold based on their own experiences, they might be inclined to ignore or discount data that suggests otherwise. This is known as cognitive bias, and it can affect how data is analyzed and acted upon. For instance, even if the sensors show that the room temperature is ideal for sleep, residents may not believe the data if it contradicts their personal feelings. Therefore, it’s crucial to balance both objective data and subjective experiences, acknowledging that personal observations can offer valuable insights into interpreting the results.
+___
+# Criteria B: Design
