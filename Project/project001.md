@@ -1,4 +1,7 @@
 # Unit 2 Distributed Weather Station for ISAK
+___
+### Criteria A: Planning
+
 
 ## Problem Definition
 
@@ -11,34 +14,26 @@ The residents need a way to monitor and track these environmental conditions to 
 ---
 
 ## Proposed Solution
+Considering the client requirements, an adequate solution includes a low-cost sensing device for humidity and temperature, as well as a custom data script to process and analyze the samples acquired. For a low-cost sensing device, the DHT11 sensor is an ideal alternative. It is offered online for less than ¥336 USD and provides adequate precision and range for the client’s needs (Temperature Range: 0°C to 50°C, Humidity Range: 20% to 90%). Similar devices such as the DHT22,  BME280 or SHT35 have higher specifications, but the DHT11 uses a simple serial communication (SPI) rather than more elaborate protocols like I2C used by the alternatives. Given the range, precision, and accuracy required for this application, the DHT11 provides the best compromise.
 
-The primary goal is to monitor the **temperature**, **humidity**, and **pressure** within the R2-14 house, particularly the rooms where the residents sleep. These environmental factors can have a significant impact on sleep quality, which is essential for maintaining overall well-being and productivity throughout the day. The proposed solution will collect data on these factors during the night and analyze the trends to identify if a correlation exists between environmental conditions and poor sleep.
-### Hardware Components
-To implement this system, two sensors will be used:
+To connect the DHT11 sensor to a computer, we will use a device that provides serial communication. A common and cost-effective solution for prototyping is the Arduino UNO microcontroller. Arduino is an open-source electronics platform known for its easy-to-use hardware and software. In addition to its low cost (<¥4300 USD), this device is programmable and expandable. While alternatives, such as different versions of Arduino, are available, their size and price make them less adequate for this project.
 
-- **DHT11 Sensor**: This is a widely used, low-cost sensor that measures temperature and humidity. It is sufficient for the intended application, offering a temperature range of **0°C to 50°C** and a humidity range of **20% to 90%**, which is appropriate for indoor environments like bedrooms. The DHT11 provides a simple and cost-effective way to monitor these two critical environmental variables. Though other more accurate sensors (like the DHT22) exist, the DHT11 offers the best balance between cost and precision for this project.
-  
-- **BMP180 Sensor**: This sensor measures atmospheric pressure and provides valuable data regarding air pressure variations in the room. Fluctuations in atmospheric pressure can impact the quality of sleep by affecting the overall comfort of the sleeping environment. The BMP180 is compact and reliable, offering a pressure measurement range of 300 to 1100 hPa, which is ideal for indoor monitoring.
+Considering the budgetary constraints and hardware requirements, the proposed software tool for this solution is Python. Python's open-source nature and platform independence contribute to the long-term viability of the system. Python simplifies potential future enhancements or modifications, enabling seamless scalability without extensive redevelopment. Compared to alternatives like C or C++, Python is a high-level programming language (HLL) with high abstraction. For example, memory management is automatic in Python, while in C/C++, it is the responsibility of the developer to allocate and free memory, which can lead to potential memory issues. Using a high-level language allows both current and future developers to extend the solution or resolve issues promptly.
 
-The sensors will be interfaced with an **Arduino UNO microcontroller**. The Arduino UNO is a cost-effective, open-source microcontroller that provides sufficient processing power for the task. It offers serial communication capabilities, which are compatible with both the DHT11 and BMP180 sensors, making it an ideal choice for data collection.
 
-### Software Implementation
+<h5> Design Statement</h5>
 
-The software solution involves using **Python**, a versatile programming language that is well-suited for data collection, processing, and analysis. The Python IDE **PyCharm** will be used for writing and testing the scripts. The **Arduino IDE** will be used for programming the microcontroller to interface with the sensors.
+Design Statement
+To investigate the environmental factors impacting the sleep quality of residents in Room R2-14, we will deploy an Arduino-based distributed weather station that monitors temperature, humidity, and air pressure. The DHT11 sensor will be used to measure temperature and humidity, while a BMP180 or similar sensor will measure air pressure. The data will be collected over a 48-hour period to identify patterns that might correlate with the residents' sleep behaviors.
 
-The steps for data collection and analysis are as follows:
-1. **Data Collection**: The Arduino will collect data from the DHT11 and BMP180 sensors at regular intervals (e.g., every 30 minutes or hourly) over a period of 48 hours. The data will include temperature, humidity, and pressure readings.
-  
-2. **Data Storage**: The collected data will be stored temporarily in a **CSV file**. CSV format is simple and widely used, making it easy to handle, visualize, and upload later.
+The collected data will be processed using Python in PyCharm, where we will create visualizations using the matplotlib library to analyze the environmental conditions and their potential effects on sleep quality. The goal of this project is to provide insights into how temperature, humidity, and pressure may be influencing sleep patterns and to suggest possible adjustments that could improve the residents' sleep environment, helping them achieve better sleep quality, productivity, and focus throughout the day.
 
-3. **Data Analysis and Visualization**: Once the data is collected, **Python’s matplotlib** library will be used to visualize the temperature, humidity, and pressure trends over time. Various plots will be generated, such as line graphs showing how these variables fluctuate during the night.
-
-4. **Correlational Analysis**: The collected data will be analyzed to check if there are significant correlations between the environmental factors (temperature, humidity, pressure) and the residents' sleep patterns. If these factors are found to affect sleep, the residents will be able to adjust their environment accordingly.
-
-### Benefits and Outcome
-
-By continuously monitoring and analyzing the room’s environmental conditions, the residents will be able to understand if temperature, humidity, or pressure is affecting their sleep. If the data shows that the temperature is too high or low, they can adjust the thermostat to optimize the sleep environment. Similarly, if the humidity is too high or low, they can invest in a humidifier or dehumidifier to maintain the optimal humidity levels for a good night’s rest.
-
-If pressure fluctuations are found to be a factor, the residents can explore other solutions, such as improving ventilation or sealing the room to prevent external air pressure variations. The data will empower the residents to make informed decisions about their sleep environment, leading to improved sleep quality and better overall health.
-
-This system will not only help in identifying sleep-related issues but can also be a useful tool for future residents of Room 20C or other rooms in the house, as they can benefit from the environmental data to ensure their own sleep quality and comfort.
+---
+## Success Criteria
+1. The solution provides a visual representation of the Humidity and Temperature values inside a dormitory (Local) and outside the house (Remote) for a period of minimum 48 hours. 
+2. ```[HL]``` The local variables will be measure using a set of 3 sensors around the dormitory.
+3. The solution provides a mathematical modelling for the Humidity and Temperature levels for each Local and Remote locations. ```(SL: linear model)```, ```(HL: non-lineal model)``` 
+4. The solution provides a comparative analysis for the Humidity and Temperature levels for each Local and Remote locations including mean, standad deviation, minimum, maximum, and median.
+5. ```(SL)```The Local samples are stored in a csv file and ```(HL)``` posted to the remote server as a backup.
+6. The solution provides a prediction for the subsequent 12 hours for both temperature and humidity.
+7. The solution includes a poster summarizing the visual representations, model and analysis created. The poster includes a recommendation about healthy levels for Temperature and Humidity.
