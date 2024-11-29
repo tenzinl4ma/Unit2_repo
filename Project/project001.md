@@ -9,7 +9,7 @@ In the R2-14 house, members tend to sleep late around 1 or 2 AM, even when they 
 
 After discussing the problem with the residents, it became clear that the root cause might not only be related to personal habits but could also be influenced by environmental factors such as temperature, humidity, and air pressure. Although these factors are not always physically noticeable, they might have an impact on sleep quality, leading to the late bedtimes and poor morning routines observed.
 
-The residents need a way to monitor and track these environmental conditions to determine if they are affecting their sleep and, if so, how they can improve their environment to ensure better sleep quality.
+My client need a way to monitor and track these environmental conditions to determine if they are affecting their sleep and, if so, how they can improve their environment to ensure better sleep quality.
 
 ---
 
@@ -31,11 +31,17 @@ The collected data will be processed using Python in PyCharm, where we will crea
 ---
 ## Success Criteria
 1. The solution provides a visual representation of the Humidity and Temperature values inside a dormitory (Local) and outside the house (Remote) for a period of minimum 48 hours. 
+ * Issue tackled: monitor and track these environmental conditions
 2. ```[HL]``` The local variables will be measure using a set of 3 sensors around the dormitory.
+ * Issue tackled: 
 3. The solution provides a mathematical modelling for the Humidity and Temperature levels for each Local and Remote locations. ```(SL: linear model)```, ```(HL: non-lineal model)``` 
+ * Issue tackled:
 4. The solution provides a comparative analysis for the Humidity and Temperature levels for each Local and Remote locations including mean, standad deviation, minimum, maximum, and median.
+ * Issue tackled:
 5. ```(SL)```The Local samples are stored in a csv file and ```(HL)``` posted to the remote server as a backup.
+* Issue tackled:
 6. The solution provides a prediction for the subsequent 12 hours for both temperature and humidity.
+* Issue tackled:
 7. The solution includes a poster summarizing the visual representations, model and analysis created. The poster includes a recommendation about healthy levels for Temperature and Humidity.
 ## TOK Connection for the Sleep Quality Project
 
@@ -64,3 +70,5 @@ Cultural and contextual factors play an important role in how we interpret envir
 Contextually, the interpretation of data can also be influenced by personal biases. If a resident believes their room is too cold based on their own experiences, they might be inclined to ignore or discount data that suggests otherwise. This is known as cognitive bias, and it can affect how data is analyzed and acted upon. For instance, even if the sensors show that the room temperature is ideal for sleep, residents may not believe the data if it contradicts their personal feelings. Therefore, it’s crucial to balance both objective data and subjective experiences, acknowledging that personal observations can offer valuable insights into interpreting the results.
 ___
 # Criteria B: Design
+Testing the soft and hard wrap of the markdown test12345678912345678 12 123 
+123 23 123 123 
