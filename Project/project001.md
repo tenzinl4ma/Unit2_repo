@@ -1,3 +1,6 @@
+
+![1TOqCm](https://github.com/user-attachments/assets/82511805-e414-48a6-aba5-00f9df912b33)
+
 # Unit 2 Distributed Weather Station for ISAK
 ___
 ### Criteria A: Planning
