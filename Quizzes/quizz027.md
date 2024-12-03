@@ -5,25 +5,24 @@
 
 # Code
 ```.py
-def sort_dict(in_dict):
-    def sort_key(item):
-        value = item[1]
-        if isinstance(value, int):
-            return value
-        elif isinstance(value, str):
-            return len(value)
-        return 0
+def sorting_key(item):
+    value = item[1]
+    if isinstance(value, int):  
+        return (0, value)  
+    elif isinstance(value, str):  
+        return (1, len(value))  
+    else:  
+        return (2, 0)  
+def sort_dict(test):
+    # Sort dictionary items using the custom sorting key
+    sorted_items = sorted(test.items(), key=sorting_key)
+    sorted_dict = dict(sorted_items)
+    print(sorted_dict)
+print(sort_dict({'python': 3, 'java': 8, 'c++': 5, 'javascript': 2})) 
+print(sort_dict({'apple': 'red', 'banana': 2, 'orange': 'orange', 'grape': 1, 'kiwi': 'brown',
+                 'pear': 8}))  
+print(sort_dict({'apple': 5, 'banana': 2, 'orange': 8, 'grape': 1}))  
 
-    sorted_items = sorted(in_dict.items(), key=sort_key)
-    return dict(sorted_items)
-
-test1 = {'apple': 5, 'banana': 2, 'orange': 8, 'grape': 1}
-test2 = {'python': 3, 'java': 8, 'c++': 5, 'javascript': 2}
-test3 = {'apple': 'red', 'banana': 2, 'orange': 'orange', 'grape': 1, 'kiwi': 'brown', 'pear': 8}
-
-print(sort_dict(test1))  # {'grape': 1, 'banana': 2, 'apple': 5, 'orange': 8}
-print(sort_dict(test2))  # {'javascript': 2, 'python': 3, 'c++': 5, 'java': 8}
-print(sort_dict(test3))  # {'grape': 1, 'banana': 2, 'apple': 'red', 'kiwi': 'brown', 'pear': 8, 'orange': 'orange'}
 
 ```
 
