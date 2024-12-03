@@ -73,5 +73,6 @@ Cultural and contextual factors play an important role in how we interpret envir
 Contextually, the interpretation of data can also be influenced by personal biases. If a resident believes their room is too cold based on their own experiences, they might be inclined to ignore or discount data that suggests otherwise. This is known as cognitive bias, and it can affect how data is analyzed and acted upon. For instance, even if the sensors show that the room temperature is ideal for sleep, residents may not believe the data if it contradicts their personal feelings. Therefore, it’s crucial to balance both objective data and subjective experiences, acknowledging that personal observations can offer valuable insights into interpreting the results.
 ___
 # Criteria B: Design
-< img src="https://github.com/user-attachments/assets/bddbd018-3289-469f-935b-84739ff4fb9c" alt= "system diagram>
+
+![System Diagram](https://github.com/user-attachments/assets/820f848e-523e-4731-8a09-433b1e94b726)
 
