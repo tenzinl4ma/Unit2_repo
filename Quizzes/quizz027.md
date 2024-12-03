@@ -5,18 +5,26 @@
 
 # Code
 ```.py
-def diction(dictt):
-    items = list(dictt.items())
-    for i in range(len(items)):
-        for j in range(i + 1, len(items)):
-            if items[i][1] > items[j][1]: 
-                items[i], items[j] = items[j], items[i]  
-    newdict = dict(items)
-    print(newdict)
-diction(dictt={'c':3,'d':4,'a':1,'b':2})
-diction(dictt= {'apple':5, 'banana': 2, 'orange': 8, 'grape': 1})
-diction(dictt={'python': 3, 'java': 8, 'c++': 5, 'javascript': 2})
-diction(dictt={'c': 3, 'd': 4, 'a': 1, 'b': 2})
+def sort_dict(in_dict):
+    def sort_key(item):
+        value = item[1]
+        if isinstance(value, int):
+            return value
+        elif isinstance(value, str):
+            return len(value)
+        return 0
+
+    sorted_items = sorted(in_dict.items(), key=sort_key)
+    return dict(sorted_items)
+
+test1 = {'apple': 5, 'banana': 2, 'orange': 8, 'grape': 1}
+test2 = {'python': 3, 'java': 8, 'c++': 5, 'javascript': 2}
+test3 = {'apple': 'red', 'banana': 2, 'orange': 'orange', 'grape': 1, 'kiwi': 'brown', 'pear': 8}
+
+print(sort_dict(test1))  # {'grape': 1, 'banana': 2, 'apple': 5, 'orange': 8}
+print(sort_dict(test2))  # {'javascript': 2, 'python': 3, 'c++': 5, 'java': 8}
+print(sort_dict(test3))  # {'grape': 1, 'banana': 2, 'apple': 'red', 'kiwi': 'brown', 'pear': 8, 'orange': 'orange'}
+
 ```
 
 # Evidence
