@@ -1,5 +1,7 @@
 
-![1TOqCm](https://github.com/user-attachments/assets/82511805-e414-48a6-aba5-00f9df912b33)
+![DHT11-Working](https://github.com/user-attachments/assets/2510f28a-fdd3-492f-8eb7-50981413d52f)
+<h6>Img by Circuit Digest</h6>
+
 
 # Unit 2 Distributed Weather Station for ISAK
 ___
