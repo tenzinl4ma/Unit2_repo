@@ -96,5 +96,59 @@ ___
 |         	|                                                                            	|                                                                                                  	|               	|                        	|           	|
 |         	|                                                                            	|                                                                                                  	|               	|                        	|           	|
 
+---
+
+# Criteria C: Development
+## List of techniques used
+- For Loop
+- While Loop
+- If/Else Statements
+- Functions
+- Lists and Dictionaries
+- Libraries
+  - Comma Separated Values (CSV) Files
+  - Serial Communication 
+  - Application Programming Interface (API)
+  - Data Visualization
+  
+
+## List of libraries used
+PyCharm: csv, time, datetime, requests, matplotlib, numpy, serial, math, 
+interruption_handler.py(custom-created lib)
+
+Arduino IDE: Adafruit DHT Sensor Library
+
+## Development
+### Code from Arduino IDE
+In order to be able to read data from the sensors, there is a need to compile and upload a program to the arduino. This is done using the Arduino IDE. The code we wrote as follows.
+
+From file ```arduino.ino```:
+```.C++
+#include "DHT.h"
+#define DHTTYPE DHT11   // DHT 11 Sensor
+
+#define DHTPIN1 13     // what pin of the arduino each sensor's data pin is connected to
+DHT dht1(DHTPIN1, DHTTYPE);
+```
+**(Success Criteria 2)** In the first line, we include the `DHT.h` class from the Adafruit Unified Sensor Library. This library is necessary in our program as it allows the arduino to identify and communicate with the DHT sensors connected to it. In the second line, we define the type of sensor we are using. For our solution, we are using the DHT11 sensor.
+
+The third and fourth line defines the pin of the arduino that the sensor is connected to, and creates the sensor's identity so that it can be used in later programs. This is done for all 3 sensors, changing the number of the pin in the arduino (defining `DHTPIN2`, `DHTPIN3`), and then the corresponding id of the sensor (`dht2`, `dht3`). The pins that the sensors are connected to can be seen in fig. 2.
+
+```.C++
+void setup() {
+ pinMode(12, OUTPUT);//PIN 12 used as a 5V port
+ digitalWrite(12,HIGH);
+ pinMode(3, OUTPUT);//PIN 3 used as a 5V port
+ digitalWrite(3,HIGH);
+ Serial.begin(9600);
+ Serial.println(F("Hello! Arduino has started"));
+ dht1.begin();
+ dht2.begin();
+ dht3.begin();
+}
+```
+
+
+
 
 
