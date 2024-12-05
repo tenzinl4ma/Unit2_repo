@@ -1,6 +1,6 @@
 
 ![DHT11-Working](https://github.com/user-attachments/assets/2510f28a-fdd3-492f-8eb7-50981413d52f)
-<h6>Img by Circuit Digest</h6>
+<h6>Img by Jobit Joseph</h6>
 
 
 # Unit 2 Distributed Weather Station for ISAK
