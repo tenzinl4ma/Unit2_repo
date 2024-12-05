@@ -78,4 +78,23 @@ ___
 <img width="660" alt="Screenshot 2024-12-03 at 3 54 27 PM" src="https://github.com/user-attachments/assets/4759e89d-af73-4a04-ae82-94cc48f88006">
 
 
+| Task No 	|                               Planned Action                               	|                                          Planned Outcome                                         	| Time estimate 	| Target completion date 	| Criterion 	|
+|:-------:	|:--------------------------------------------------------------------------:	|:------------------------------------------------------------------------------------------------:	|:-------------:	|:----------------------:	|:---------:	|
+| 1       	| write the problem<br>context and design <br>statement                      	| have concrete problem <br>defination and design <br>design statement.                            	| 15 min        	| Nov 22                 	| A         	|
+| 2       	| Code and upload code<br>on Arduino with <br>Arduino IDE                    	| upload program for data<br>collection and the light <br>indicator for the arduino                	| 45 min        	| Nov 23                 	| C         	|
+| 3       	| Make Arduino Circuit<br>and right connection <br>of all components         	| have able to read the data<br>of sensors and blink <br>indicators.                               	| 30 min        	| Nov 23                 	| C         	|
+| 4       	| Connect with python                                                        	| able to read the data on <br>terminal and control via <br>pyfirmata                              	| 1 hr          	| Nov 24                 	| C         	|
+| 5       	| Answer TOK questions                                                       	| drafting and refining the <br>answers                                                            	| 25 min        	| Nov 24                 	| A         	|
+| 6       	| watch tutorial on how <br>to create new file <br>and store in csv folder   	| able to store all the <br>reading from sensor into csv<br>file.                                  	| 30 min        	| Nov 25                 	| C         	|
+| 7       	| create function for <br>keyboard interruption<br>and sensor error.         	| make a library that is able<br>to pause, resume with threshold<br>module to tackle, interuption. 	| 1 hr          	| Nov 26                 	| C         	|
+| 8       	| Create an Id on server <br>and push the csv                                	| able to store the data on server<br>for backup                                                   	| 2 hrs         	| Nov 28                 	| C         	|
+| 9       	| Construct Graphs using <br>matplotlib.pyplot                               	| Have graph of data and average <br>using pyplot                                                  	| 3 hrs         	| Nov 29                 	| C/D       	|
+| 10      	| Conduct usability <br>testing to check if graphs<br>represent data clearly 	| Have a finalized graphs that <br>which is understable to everyone                                	| 45 min        	| Nov 30                 	| D         	|
+|         	|                                                                            	|                                                                                                  	|               	|                        	|           	|
+|         	|                                                                            	|                                                                                                  	|               	|                        	|           	|
+|         	|                                                                            	|                                                                                                  	|               	|                        	|           	|
+|         	|                                                                            	|                                                                                                  	|               	|                        	|           	|
+|         	|                                                                            	|                                                                                                  	|               	|                        	|           	|
+
+
 
