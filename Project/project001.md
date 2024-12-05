@@ -124,11 +124,15 @@ In order to be able to read data from the sensors, there is a need to compile an
 
 From file ```arduino.ino```:
 ```.C++
-#include "DHT.h"
-#define DHTTYPE DHT11   // DHT 11 Sensor
+#include <DHT.h>
 
-#define DHTPIN1 13     // what pin of the arduino each sensor's data pin is connected to
-DHT dht1(DHTPIN1, DHTTYPE);
+// Pin definitions for the DHT sensors and LED
+#define DHT1_PIN 2
+#define DHT2_PIN 3
+#define LED_PIN 7
+
+DHT dht1(DHT1_PIN, DHT11);  // Sensor 1 
+DHT dht2(DHT2_PIN, DHT11);  // Sensor 2 
 ```
 **(Success Criteria 2)** In the first line, we include the `DHT.h` class from the Adafruit Unified Sensor Library. This library is necessary in our program as it allows the arduino to identify and communicate with the DHT sensors connected to it. In the second line, we define the type of sensor we are using. For our solution, we are using the DHT11 sensor.
 
@@ -136,16 +140,13 @@ The third and fourth line defines the pin of the arduino that the sensor is conn
 
 ```.C++
 void setup() {
- pinMode(12, OUTPUT);//PIN 12 used as a 5V port
- digitalWrite(12,HIGH);
- pinMode(3, OUTPUT);//PIN 3 used as a 5V port
- digitalWrite(3,HIGH);
- Serial.begin(9600);
- Serial.println(F("Hello! Arduino has started"));
- dht1.begin();
- dht2.begin();
- dht3.begin();
+  Serial.begin(9600);
+  dht1.begin();
+  dht2.begin();
+  pinMode(LED_PIN, OUTPUT);  // Initialize the LED pin as an output
+  digitalWrite(LED_PIN, LOW);  // Initially turn off the LED
 }
+
 ```
 
 
