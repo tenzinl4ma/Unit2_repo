@@ -255,4 +255,142 @@ The `setup()` function initializes the necessary components for the Arduino prog
 The program reads data from the DHT sensors every 60 seconds, using the `millis()` function to track the time elapsed since the last reading. Once 60 seconds have passed, it reads the temperature and humidity values from both sensors. These values are stored in separate variables (`temp1`, `hum1`, `temp2`, `hum2`). If the readings fail (i.e., if the data returned is NaN), an error message is printed. Otherwise, the successful readings are displayed in the Serial Monitor in a comma-separated format.
 
 ### Code from Pycharm
+**(Success Criteria 5)** Initially, we recognized the critical need for a reliable communication link with our remote server to ensure the safety and accessibility of our data. We made the decision to store our collected data remotely, creating a backup on the server. This approach ensures that if the local backup encounters issues, such as malfunctioning or becoming inaccessible, we can easily retrieve the same data by accessing the server's backup. This redundancy provides an added layer of security and reliability, ensuring that our data remains intact and retrievable under any circumstances.
 
+From file server-handshakr.py:
+ 
+```.py
+import requests
+# Server details
+server_ip = 'http://XXX.XX.X.XXX' # For security reaseon and DdoS 
+register_url = f'{server_ip}/register'
+login_url = f'{server_ip}/login'
+sensor_url = f'{server_ip}/sensor/new'
+sensor_data_url = f'{server_ip}/sensor/data'
+
+```
+ requests: This library is used to send HTTP requests to a web server. In 
+ this code, it handles POST requests to register users, log in, create 
+ sensors, and send data. After slash the server ip/ these are the endpoints 
+ where HTTP request will be sent to perform set function.
+ ```.py
+ 
+# New user details mean to run once
+new_user = {
+    "username": "**********",  # set username 
+    "password": "**********"    # set password
+}
+```
+This is the data for the new user you're creating on the server. The username and password are used for registration and logging in.
+```.python
+# Register User [ONLY RUN ONCE]
+answer = requests.post(f'http://{ip}/register', json=user)  # Register user, save result in answer
+print(answer.json())  # Print answer to check if it worked
+
+```
+Purpose: This line sends a POST request to the server to register the user. The server will receive the username and password in JSON format. If uncommented, this would initiate the registration process.
+```.python
+answer = requests.post(f"http://{server_ip}/login", json=user)
+print(answer.json())
+cookie = answer.json()['access_token']
+print(cookie)
+
+```
+This sends a POST request to the servers /login endpoint with the provided 
+username and password. This server responds with an access token
+(asscess_token) that is used to authorize future requests. The third line 
+code is to extracts the access token from the JSON response and stores it in 
+the cookie variable. This token is printed out, which is needed for 
+authenticating further requests.
+ 
+```.python
+# step 3: create a sensor
+# auth = {"Authorization": f'Bearer {cookie}'}
+sensor = {
+    'type': 'temperature',
+    'location': 'R2-14',
+    'name': 'Dragonsensor',
+    'unit': 'C'
+}
+# answer = requests.post(f'http://{server_ip}/sensor/new', json=sensor, headers=auth)
+# print(answer.json())
+
+```
+Here the sensor object is created with different attributes.
+```.python
+# Part 1
+def process_and_push_data(csv_file, auth_header):
+    with open(csv_file, mode='r') as file:
+        csv_reader = csv.reader(file)
+        next(csv_reader)  # Skip header row
+# Part 2
+ for row in csv_reader:
+        temp = float(row[1])  # Mean Temperature (°C)
+        humidity = float(row[2])  # Mean Humidity (%)
+        pressure = float(row[3])  # Estimated Pressure (hPa)
+
+        temperature_data.append(temp)
+        humidity_data.append(humidity)
+        pressure_data.append(pressure)
+```
+In commented part 1 it open a CSV file in read mode and initialize the 
+reading and skip the first line as its heading row. From part 2 its the 
+looping throug each row in the CSV file it and the respecting value are 
+converted in time string and temperature, humidity, pressure into floats. 
+
+---
+
+**(Success Criteria 4)** This section we will be reading the data from the 
+sensors send by the arduino in live time with pyserial and then calculate 
+the exstimate pressure. These data are then save in local csv file and then 
+later send to the server for the backup. Lets walk through the code.
+```.python
+import serial
+import math
+def estimate_pressure(temp, humidity):# Function to estimate the atmospheric pressure using temperature and humidity
+    E_s = 6.112 * math.exp((17.67 * temp) / (temp + 243.5))    # This is the Ideal gas and psychometric formula that I talk about in problem definition
+    E_a = E_s * (humidity / 100)    # Calculate the actual vapor pressure
+    pressure = 1013.25 * (1 + (temp / 44330)) ** 5.255
+    return round(pressure, 2)  # Return the pressure rounded to 2 decimal places
+arduino_port = "/dev/cu.usbserial-110"  # This is my mac port
+baud_rate = 9600  # this is to match the arduino
+csv_file = "dht11_data.csv"  # this is my file name where sensor data is stored
+```
+First we import the math for calculating the estimate pressure applyig the 
+psychometric formula and serial for the live interaction with the arduino to 
+read the data. we calculate and round the data into 2 decimal point and 
+these data were saved to the csv file called dht11_data.csv file. 
+```.python
+# send temperature data
+for temp in temperature_data:
+    sensor_data = {'data': [temp]}  # Wrap the data in a list
+    response = requests.post(f"http://{server_ip}/sensor/{temperature_sensor_name}/data", json=sensor_data,
+                             headers=auth)
+    if response.status_code == 200:
+        print("Temperature data sent successfully.")
+    else:
+        print(f"Failed to send temperature data: {response.status_code}, {response.text}")
+# Send pressure data
+for pressure in pressure_data:
+    sensor_data = {'data': [pressure]}  # Wrap the data in a list
+    response = requests.post(f"http://{server_ip}/sensor/{pressure_sensor_name}/data", json=sensor_data, headers=auth)
+    if response.status_code == 200:
+        print("Pressure data sent successfully.")
+    else:
+        print(f"Failed to send pressure data: {response.status_code}, {response.text}")
+# send the humidity data
+for hum in humidity_data:
+    sensor_data = {'data': [hum]}  # Wrap the data in a list
+    response = requests.post(f"http://{server_ip}/sensor/{humidity_sensor_name}
+    /data", json=sensor_data,
+                             headers=auth)
+    if response.status_code == 200:
+        print("Humididty  data sent successfully.")
+    else:
+        print(f"Failed to send Humidity data: {response.status_code}, {response.
+        text}")
+```
+ Then we loop through each data which is appended in temp, hum and press 
+ variable which is then send these  data to the sever for the remote for the 
+ backup.
+ 
