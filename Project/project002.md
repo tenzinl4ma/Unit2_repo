@@ -114,7 +114,8 @@ locally
 and a 
 backup copy will be store in the remote server using the Weather API.
 
-![Screenshot 2024-12-07 at 2 08 00 PM](https://github.com/user-attachments/assets/0e012c23-7a2f-4e26-8081-bb318b5546d7)
+
+<img width="592" alt="Screenshot 2024-12-07 at 2 38 21 PM" src="https://github.com/user-attachments/assets/c8d7815a-0ea4-4fcf-bb44-e02aa85e162f">
 
 
 Fig.2 The above diagram shows the hardware architecture of the arduino. The 
