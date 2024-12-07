@@ -349,7 +349,7 @@ converted in time string and temperature, humidity, pressure into floats.
 
 ---
 
-**(Success Criteria 2,4)** This section we will be reading the data from the 
+**(Success Criteria 2)** This section we will be reading the data from the 
 sensors send by the arduino in live time with pyserial and then calculate 
 the exstimate pressure. These data are then save in local csv file and then 
 later send to the server for the backup. Lets walk through the code.
@@ -466,3 +466,24 @@ a group of data points, calculate their average, and create a smoother line that
 makes the underlying trend much clearer. This will helps us to better 
 understand how the temperature or humidity is changing over time without 
 getting distracted by the random fluctuations. 
+
+**Success Criteria 4**
+```.python
+from sklearn.preprocessing import StandardScaler
+import numpy as np
+
+def standardization(data: list):
+    data_array = np.array(data)  # Convert the data list to a NumPy array
+    data_reshaped = data_array.reshape(-1, 1)  # Reshape data for StandardScaler
+    scaler = StandardScaler()  # Initialize the StandardScaler
+    sc_data = scaler.fit_transform(data_reshaped)  # Standardize the data
+    
+    time = np.arange(sc_data.shape[0])  # Generate time indices for the data
+    return time, sc_data  # Return the time and standardized data
+
+```
+I decided to use the standardization technique because I needed to ensure that both the remote and local sensor data could be compared on a common scale. The data collected from both sources may have different ranges or units, and this could cause misinterpretation when visualizing or analyzing them.
+
+By standardizing the data, I can transform the data to have a mean of 0 and a standard deviation of 1, regardless of the original units or scale. This ensures that the pressure data from the CSV file and the server are directly comparable, even if they originally had different ranges.
+
+The goal of this technique is to remove any bias from the scale or units of the data so that I can analyze and visualize the relative patterns and trends between the two sources. This helps in understanding how the pressure values from both sources fluctuate over time and allows me to accurately compare and visualize the two datasets on a single graph.
