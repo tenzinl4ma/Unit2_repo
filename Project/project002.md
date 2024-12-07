@@ -101,6 +101,7 @@ Cultural and contextual factors play an important role in how we interpret envir
 Contextually, the interpretation of data can also be influenced by personal biases. If a resident believes their room is too cold based on their own experiences, they might be inclined to ignore or discount data that suggests otherwise. This is known as cognitive bias, and it can affect how data is analyzed and acted upon. For instance, even if the sensors show that the room temperature is ideal for sleep, residents may not believe the data if it contradicts their personal feelings. Therefore, it’s crucial to balance both objective data and subjective experiences, acknowledging that personal observations can offer valuable insights into interpreting the results.
 ___
 # Criteria B: Design
+
 <img width="660" alt="Screenshot 2024-12-03 at 3 54 27 PM" src="https://github.com/user-attachments/assets/4759e89d-af73-4a04-ae82-94cc48f88006">
 
 Fig.1 Shows the  System diagram (HL) for the proposed system to visualize and 
@@ -140,7 +141,7 @@ Arduino is powered by the computer with 5v via the cable.
 <h3> Record of Tasks</h3>
 
 | Task No 	 |                Planned Action                               	                |                     Planned Outcome                                         	                      |  Time estimate 	  | Target completion date 	 | Criterion 	 |
-|:---------:|:----------------------------------------------------------------------------:|:--------------------------------------------------------------------------------------------------:|:-----------------:|:------------------------:|:-----------:|
+|:---------:|:----------------------------------------------------------------------------:|:--------------------------------------------------------------------------------------------------:|:-----------------:|:------------------------:|:-----:|
 | 1       	 | write the problem<br>context and design <br>statement                      	 | have concrete problem <br>defination and design <br>design statement.                            	 |  15 min        	  | Nov 22                 	 | A         	 |
 | 2       	 | Code and upload code<br>on Arduino with <br>Arduino IDE                    	 | upload program for data<br>collection and the light <br>indicator for the arduino                	 |  45 min        	  | Nov 23                 	 | C         	 |
 | 3       	 | Make Arduino Circuit<br>and right connection <br>of all components         	 | have able to read the data<br>of sensors and blink <br>indicators.                               	 |  30 min        	  | Nov 23                 	 | C         	 |
@@ -151,11 +152,7 @@ Arduino is powered by the computer with 5v via the cable.
 | 8       	 | Create an Id on server <br>and push the csv                                	 | able to store the data on server<br>for backup                                                   	 |  2 hrs         	  | Nov 28                 	 | C         	 |
 | 9       	 | Construct Graphs using <br>matplotlib.pyplot                               	 | Have graph of data and average <br>using pyplot                                                  	 |  3 hrs         	  | Nov 29                 	 | C/D       	 |
 | 10      	 | Conduct usability <br>testing to check if graphs<br>represent data clearly 	 | Have a finalized graphs that <br>which is understable to everyone                                	 |  45 min        	  | Nov 30                 	 | D         	 |
-      |    11	    |            make a poster to illustrate <br/>your<br/>overall project 	            |                                      Have a finalize poster 	                                      | 1.5 hrs         	 |      De1          	      |  C/D     	  |
-|     	     |                                      	                                       |                                                 	                                                  |         	         |            	             |      	      |
-|     	     |                                      	                                       |                                                 	                                                  |         	         |            	             |      	      |
-|     	     |                                      	                                       |                                                 	                                                  |         	         |            	             |      	      |
-|     	     |                                      	                                       |                                                 	                                                  |         	         |            	             |      	      |
+|    11	    |            make a poster to illustrate <br/>your<br/>overall project 	            |                                      Have a finalize poster 	                                      | 1.5 hrs         	 |      De1          	      |  C/D  |
 
 ---
 
