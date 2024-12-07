@@ -469,7 +469,6 @@ getting distracted by the random fluctuations.
 
 **Success Criteria 4**
 ```.python
-from sklearn.preprocessing import StandardScaler
 import numpy as np
 
 def standardization(data: list):
@@ -482,6 +481,11 @@ def standardization(data: list):
     return time, sc_data  # Return the time and standardized data
 
 ```
+
+![standardized_pressure_comparison_plot](https://github.com/user-attachments/assets/203e99f0-7d41-47ae-ba0a-fff038721ba6)
+
+<h6 align='center' > Graph of standardized pressure</h6>
+
 I decided to use the standardization technique because I needed to ensure that both the remote and local sensor data could be compared on a common scale. The data collected from both sources may have different ranges or units, and this could cause misinterpretation when visualizing or analyzing them.
 
 By standardizing the data, I can transform the data to have a mean of 0 and a standard deviation of 1, regardless of the original units or scale. This ensures that the pressure data from the CSV file and the server are directly comparable, even if they originally had different ranges.
