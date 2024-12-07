@@ -57,10 +57,19 @@ The collected data will be processed using Python in PyCharm, where we will crea
 
 ---
 ## Success Criteria
-1. The solution provides a visual representation of the Humidity and Temperature values inside a dormitory (Local) and outside the house (Remote) for a period of minimum 48 hours. 
+1. The solution provides a visual representation of the Humidity and  
+   Temperature values inside a dormitory (Local) and outside the house  
+   (Remote) for a period of minimum 48 hours. 
  * Issue tackled: By monitoring environmental conditions both inside and 
-   outside the dormitory, the project helps identify patterns that might be affecting the sleep of residents, such as temperature and humidity levels. According to research from the National Library of Medicine, exposure to certain heat levels, particularly in humid environments, can negatively affect sleep stages and thermoregulation. By visualizing these factors, this solution could directly contribute to understanding and improving residents' sleep quality.
-2. ```[HL]``` The local variables will be measure using a set of 3 sensors around the dormitory.
+   outside the dormitory, the project helps identify patterns that  might be 
+   affecting the sleep of residents, such as temperature and humidity levels.
+   According to research from the National Library of Medicine, exposure to  
+   certain heat levels, particularly in humid environments, can negatively  
+   affect sleep stages and thermoregulation. By visualizing these factors,  
+   this solution could directly contribute to understanding and improving  
+   residents' sleep quality.
+2. ```[HL]``` The local variables will be measure using a set of 2 sensors 
+   around the room.
  * Issue tackled: By using two sensors to measure temperature, humidity, and calculated pressure, and calculating the mean of these readings, the solution ensures reliable data. This approach resolves potential inconsistencies from individual sensors, allowing for a more accurate representation of conditions that may influence sleep. Given that ideal humidity levels are between 30% and 50% (EPA recommendation), and that excessive heat can reduce sleep quality, monitoring these variables is essential.
 3. The solution provides a mathematical modelling for the Humidity and Temperature levels for each Local and Remote locations. ```(SL: linear model)```, ```(HL: non-lineal model)``` 
  * Issues tackled: This solution resolves the challenge of understanding how environmental factors interact. Modeling temperature, humidity, and pressure will help identify how different combinations affect sleep quality. Given the recommended temperature ranges of 15.6°C to 19.4°C (for adults) and 18.3°C to 21.1°C (for babies), this modeling will provide actionable insights into how adjustments to these variables can improve sleep.
@@ -340,7 +349,7 @@ converted in time string and temperature, humidity, pressure into floats.
 
 ---
 
-**(Success Criteria 4)** This section we will be reading the data from the 
+**(Success Criteria 2,4)** This section we will be reading the data from the 
 sensors send by the arduino in live time with pyserial and then calculate 
 the exstimate pressure. These data are then save in local csv file and then 
 later send to the server for the backup. Lets walk through the code.
@@ -393,4 +402,65 @@ for hum in humidity_data:
  Then we loop through each data which is appended in temp, hum and press 
  variable which is then send these  data to the sever for the remote for the 
  backup.
- 
+**Success Criteria 1**
+ The data from the dht11_data.csv file are open in read mode. 
+ ```.python
+times, temperature, humidity, pressure = [],[],[],[]
+with open('dht11_data.csv', mode='r') as file:# Open and read the CSV file
+    reader = csv.reader(file)
+    next(reader)  # Skip the header row
+    for row in reader:         # Check if the row has the expected number of columns
+        if len(row) >= 4:  # Ensure there are at least 4 columns (Time, Temp, Humidity, Pressure)
+            time_str = row[0]  # Assuming Time is the first column
+            temperature_value = float(row[1])  # Assuming Temperature (°C) is the second column
+            humidity_value = float(row[2])  # Assuming Humidity (%) is the third column
+            pressure_value = float(row[3])  # Assuming Pressure (hPa) is the fourth column
+            time_obj = datetime.strptime(time_str, '%m-%d %H:%M')  # Adjust the format as needed
+            times.append(time_obj)            # Append the data to the lists
+            temperature.append(temperature_value),humidity.append(humidity_value),pressure.append(pressure_value)
+```
+we made the empty list to store the respective data later after open opening 
+the csv file we loop through every row and extract the value in float and 
+append to the empyty list that variable which was declared above. Now we 
+have a set of data in respective list with name assign.
+```.python
+times_np = np.array([np.datetime64(t) for t in times])# Convert times to numpy array
+temperature_np = np.array(temperature)
+humidity_np = np.array(humidity)
+pressure_np = np.array(pressure)
+fig, axs = plt.subplots(3, 1, figsize=(10, 12))# Create subplots (3 rows and 1 column)
+axs[0].plot(times_np, temperature_np, label='Temperature (°C)\n R2-14(B)', color='r')
+axs[1].plot(times_np, humidity_np, label='Humidity (%)\n R2-14(B)', color='g')
+axs[2].plot(times_np, pressure_np, label='Pressure (hPa)\n R2-14(B)', color='b')
+plt.show()
+```
+![weather_data_plot.png](../project2-p/weather_data_plot.png)
+
+<h6 align='center'>Fig5. trend on time and other objects</h6>
+
+we convert the datetime into he numpy array(numpy built in function) and other 
+objects too, so that we can plot in the graph. The above graph is the full 
+graph on the raw data on humidity, temperature, pressure trend on time which 
+was record for more than 49 hours. 
+
+![weather_data_extra_smoothed_plot.png](../project2-p/weather_data_extra_smoothed_plot.png)
+
+<h6 align='center'>Fig5. Smoothen data graph</h6>
+
+```.python
+def moving_average(windowSize:int, x:list)->list:
+    x_smoothed = []
+    for i in range(0, len(x)-windowSize):
+        x_section = x[i:i+windowSize]
+        x_average = sum(x_section)/windowSize
+        x_smoothed += [x_average]
+    return x_smoothed
+```
+I decided to use the moving average function to smooth out the data because the 
+raw data was too noisy and fluctuating too much. When working with things like 
+temperature or humidity measurements, the values can jump up and down rapidly, 
+making it hard to see any real patterns. By using a moving average, I can take
+a group of data points, calculate their average, and create a smoother line that
+makes the underlying trend much clearer. This will helps us to better 
+understand how the temperature or humidity is changing over time without 
+getting distracted by the random fluctuations. 
