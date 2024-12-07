@@ -126,7 +126,8 @@ pins as shown. The
 Arduino is powered by the computer with 5v via the cable.
 
 <img width="860" alt="Screenshot 2024-12-07 at 2 59 52 PM" src="https://github.com/user-attachments/assets/653069a6-51a4-4f02-a09a-35901f3422ba">
- Fig.3  Above diagram show the location of the DHT11 sensor across the room 
+ 
+Fig.3  Above diagram show the location of the DHT11 sensor across the room 
 of R2-14. The arduino is center of the room and each sensor is around 
 diagonal of the room. These two sensor are going to measure hte temperature 
 and the humidity of the room and later we can also calculate the estimate 
@@ -138,7 +139,7 @@ the atmospheric pressure from these readings.
 
 ![Screenshot 2024-12-07 at 3 44 37 PM](https://github.com/user-attachments/assets/e3c6daef-2102-46a5-9e94-ad7e49a48e11)
 
-####  The above flowchart shows the blinking light indicator with an infinite loop with no end. the light will blink 7 times in each loop.
+#### Fig.4    The above flowchart shows the blinking light indicator with an infinite loop with no end. the light will blink 7 times in each loop.
 
 
 
