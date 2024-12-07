@@ -126,7 +126,20 @@ pins as shown. The
 Arduino is powered by the computer with 5v via the cable.
 
 <img width="860" alt="Screenshot 2024-12-07 at 2 59 52 PM" src="https://github.com/user-attachments/assets/653069a6-51a4-4f02-a09a-35901f3422ba">
+ Fig.3  Above diagram show the location of the DHT11 sensor across the room 
+of R2-14. The arduino is center of the room and each sensor is around 
+diagonal of the room. These two sensor are going to measure hte temperature 
+and the humidity of the room and later we can also calculate the estimate 
+the atmospheric pressure from these readings.
 
+--- 
+
+### Flow chart
+
+
+
+
+---
 
 ## Test Plan
 | Test Type        | Test Content                                                                                                         | Input                                                                                                                                                                                                                                                                                                                                                                 | Expected Output                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
