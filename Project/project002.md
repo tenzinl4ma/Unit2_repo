@@ -136,6 +136,9 @@ the atmospheric pressure from these readings.
 
 ### Flow chart
 
+![Screenshot 2024-12-07 at 3 44 37 PM](https://github.com/user-attachments/assets/e3c6daef-2102-46a5-9e94-ad7e49a48e11)
+
+####  The above flowchart shows the blinking light indicator with an infinite loop with no end. the light will blink 7 times in each loop.
 
 
 
