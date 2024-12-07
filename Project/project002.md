@@ -434,7 +434,8 @@ axs[1].plot(times_np, humidity_np, label='Humidity (%)\n R2-14(B)', color='g')
 axs[2].plot(times_np, pressure_np, label='Pressure (hPa)\n R2-14(B)', color='b')
 plt.show()
 ```
-![weather_data_plot.png](../project2-p/weather_data_plot.png)
+![weather_data_plot](https://github.com/user-attachments/assets/7d11b154-45aa-4c23-824b-2d30a16060bb)
+
 
 <h6 align='center'>Fig5. trend on time and other objects</h6>
 
@@ -443,7 +444,8 @@ objects too, so that we can plot in the graph. The above graph is the full
 graph on the raw data on humidity, temperature, pressure trend on time which 
 was record for more than 49 hours. 
 
-![weather_data_extra_smoothed_plot.png](../project2-p/weather_data_extra_smoothed_plot.png)
+![weather_data_extra_smoothed_plot](https://github.com/user-attachments/assets/b106ddea-b46a-4c62-b5c5-999b131ca428)
+
 
 <h6 align='center'>Fig5. Smoothen data graph</h6>
 
