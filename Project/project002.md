@@ -10,31 +10,31 @@ ___
 
 ## Problem Definition
 
-In the R2-14 house, members tend to sleep late around 1 or 2 AM, even when they are not studying or engaged in any particular activity. This late sleep pattern often leads to waking up late in the morning, causing some to miss breakfast or even classes. As a result, their overall productivity and focus during the day are negatively affected.
+In the R2-14 house, members sleep late around 1 or 2 AM, even when they are not studying or engaged in any particular activity. This late sleep pattern often leads to waking up late in the morning, causing some to miss breakfast or even classes. As a result, their overall productivity and focus during the day are negatively affected.
 
-And one member came to me and complain about this situation,(Client) party A.
+And one member came to me and complained about this situation,(Client) party A.
 I try to pinpoint the problem and after 
 discussing 
 the problem with other residents,
 it became clear 
 that 
-the root cause might not only be related to personal habits but could also be influenced by environmental factors such as temperature, humidity, and air pressure. Although these factors are not always physically noticeable, they might have an impact on sleep quality, leading to the late bedtimes and poor morning routines observed.
+the root cause might not only be related to personal habits but could also be influenced by environmental factors such as temperature, humidity, and air pressure. Although these factors are not always physically noticeable, they might impact sleep quality, leading to late bedtimes and poor morning routines.
 
-My client( Party A) need a way to monitor and track these environmental 
+My client( Party A) needs a way to monitor and track these environmental 
 conditions to 
 determine if they are affecting their sleep and, if so, how they can improve their environment to ensure better sleep quality.
 
 ---
 
 ## Proposed Solution
-Considering the client requirements, an adequate solution includes a 
-low-cost sensing device for humidity and temperature, as well as a custom 
+Considering the client's requirements, an adequate solution includes a 
+low-cost sensing device for humidity and temperature and a custom 
 data script to process and analyze the samples acquired. For a low-cost 
 sensing device, the DHT11 sensor is an ideal alternative. It is offered 
-online for less than ¥336 USD and provides adequate precision and range for 
+online for less than ¥336 and provides adequate precision and range for 
 the client’s needs (Temperature Range: 0°C to 50°C, Humidity Range: 20% to 
-90%). Similar devices such as the DHT22,  BME280 or SHT35 have higher specifications, but the DHT11 uses a simple serial communication (SPI) rather than more elaborate protocols like I2C used by the alternatives. 
-Also, we can calculate the estimate atmospheric pressure by the ideal gas 
+90%). Similar devices such as the DHT22,  BME280, or SHT35 have higher specifications, but the DHT11 uses a simple serial communication (SPI) rather than more elaborate protocols like I2C used by the alternatives. 
+Also, we can calculate the estimated atmospheric pressure by the ideal gas 
 law and the psychrometric law E=(RH/100)*Es(T) from temperature and humidity 
 readings 
 from 
@@ -114,6 +114,7 @@ locally
 and a 
 backup copy will be store in the remote server using the Weather API.
 
+![Screenshot 2024-12-07 at 2 08 00 PM](https://github.com/user-attachments/assets/0e012c23-7a2f-4e26-8081-bb318b5546d7)
 
 
 Fig.2 The above diagram shows the hardware architecture of the arduino. The 
