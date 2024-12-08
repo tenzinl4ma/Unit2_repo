@@ -574,3 +574,5 @@ quadratic terms (e.g., time squared) and using LinearRegression, the code models
 curved patterns like rises and falls more effectively than a linear model. This 
 approach highlights fluctuations and provides deeper insights into environmental
 variations over time.
+
+**Sucess Criteria 6**
