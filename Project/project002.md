@@ -30,10 +30,12 @@ determine if they are affecting their sleep and, if so, how they can improve the
 Considering the client's requirements, an adequate solution includes a 
 low-cost sensing device for humidity and temperature and a custom 
 data script to process and analyze the samples acquired. For a low-cost 
-sensing device, the DHT11 sensor is an ideal alternative. It is offered 
+sensing device, the DHT11 sensor [^1] is an ideal alternative. It is offered 
 online for less than ¥336 and provides adequate precision and range for 
 the client’s needs (Temperature Range: 0°C to 50°C, Humidity Range: 20% to 
-90%). Similar devices such as the DHT22,  BME280, or SHT35 have higher specifications, but the DHT11 uses a simple serial communication (SPI) rather than more elaborate protocols like I2C used by the alternatives. 
+90%). Similar devices such as the DHT22,  BME280, or SHT35 have higher 
+specifications [^2], but the DHT11 uses a simple serial communication (SPI) 
+rather than more elaborate protocols like I2C used by the alternatives. 
 Also, we can calculate the estimated atmospheric pressure by the ideal gas 
 law and the psychrometric law E=(RH/100)*Es(T) from temperature and humidity 
 readings 
@@ -43,17 +45,48 @@ accuracy required for this
 application,
 the DHT11 provides the best compromise.
 
-To connect the DHT11 sensor to a computer, we will use a device that provides serial communication. A common and cost-effective solution for prototyping is the Arduino UNO microcontroller. Arduino is an open-source electronics platform known for its easy-to-use hardware and software. In addition to its low cost (<¥4300 USD), this device is programmable and expandable. While alternatives, such as different versions of Arduino, are available, their size and price make them less adequate for this project.
+To connect the DHT11 sensor to a computer, we will use a device that provides 
+serial communication. A common and cost-effective solution for prototyping is the 
+Arduino UNO microcontroller [^3]. Arduino is an open-source electronics 
+platform 
+known 
+for its easy-to-use hardware and software. In addition to its low cost (<¥4300 ),
+this device is programmable and expandable. While alternatives, such as different 
+versions of Arduino, are available, their size and price make them less adequate 
+for this project.
 
-Considering the budgetary constraints and hardware requirements, the proposed software tool for this solution is Python. Python's open-source nature and platform independence contribute to the long-term viability of the system. Python simplifies potential future enhancements or modifications, enabling seamless scalability without extensive redevelopment. Compared to alternatives like C or C++, Python is a high-level programming language (HLL) with high abstraction. For example, memory management is automatic in Python, while in C/C++, it is the responsibility of the developer to allocate and free memory, which can lead to potential memory issues. Using a high-level language allows both current and future developers to extend the solution or resolve issues promptly.
+Considering the budgetary constraints and hardware requirements, the proposed 
+software [^4] tool for this solution is Python. Python's open-source nature and 
+platform
+independence contribute to the long-term viability of the system. Python simplifies 
+potential future enhancements or modifications, enabling seamless scalability without
+extensive redevelopment [^5] [^6]. Compared to alternatives like C or C++, 
+Python is 
+a high-level 
+programming language (HLL) with high abstraction [^7]. For example, memory 
+management is automatic 
+in Python, while in C/C++, it is the responsibility of the developer to allocate and free memory, 
+which can lead to potential memory issues. Using a high-level language allows both
+current and future developers to extend the solution or resolve issues promptly.
 
 
 <h5> Design Statement</h5>
 
 
-To investigate the environmental factors impacting the sleep quality of residents in Room R2-14, we will deploy an Arduino-based distributed weather station that monitors temperature, humidity, and air pressure. The DHT11 sensor will be used to measure temperature and humidity, while a BMP180 or similar sensor will measure air pressure. The data will be collected over a 48-hour period to identify patterns that might correlate with the residents' sleep behaviors.
+To investigate the environmental factors impacting the sleep quality of residents
+in Room R2-14, we will deploy an Arduino-based distributed weather station that
+monitors temperature, humidity, and air pressure. The DHT11 sensor will be used 
+to measure temperature and humidity, while a BMP180 or similar sensor will measure 
+air pressure. The data will be collected over a 48-hour period to identify patterns
+that might correlate with the residents' sleep behaviors.
 
-The collected data will be processed using Python in PyCharm, where we will create visualizations using the matplotlib library to analyze the environmental conditions and their potential effects on sleep quality. The goal of this project is to provide insights into how temperature, humidity, and pressure may be influencing sleep patterns and to suggest possible adjustments that could improve the residents' sleep environment, helping them achieve better sleep quality, productivity, and focus throughout the day.
+The collected data will be processed using Python in PyCharm [^8], where we will 
+create 
+visualizations using the matplotlib library to analyze the environmental conditions 
+and their potential effects on sleep quality. The goal of this project is to provide 
+insights into how temperature, humidity, and pressure may be influencing sleep patterns
+and to suggest possible adjustments that could improve the residents' sleep environment,
+helping them achieve better sleep quality, productivity, and focus throughout the day.
 
 ---
 ## Success Criteria
@@ -578,7 +611,8 @@ variations over time.
 **Sucess Criteria 6**
 
 ![Prediction](https://github.com/user-attachments/assets/72e50041-c54a-487c-a6b6-5db9776a917d)
-<h6 align="center"> 12 hours further prediction of the data  </h6>>
+<h6 align="center"> 12 hours further prediction of the data  </h6>
+
 
 ```.python
 with open('dht11_data.csv', mode='r') as file:
@@ -618,4 +652,23 @@ I created a simple yet informative poster that summarizes the key aspects of my 
 
 The poster also outlines the recommendations for healthy levels of these parameters and emphasizes the importance of monitoring them in dormitory environments. It serves as a clear and concise summary of the work done, while also pointing out the potential for future improvements and research.
 
+
+# Criteria D: Functionality
+---
+A 7 min video demonstrating the propsed solution with narration
+---
+
+## Citation
+
+
+[^1]: Industries, Adafruit. “DHT11 Basic Temperature-Humidity Sensor + Extras.” Adafruit Industries Blog RSS, https://www.adafruit.com/product/386. 
+[^2]: Nelson, Carter. “Modern Replacements for DHT11 and dht22 Sensors.” Adafruit Learning System, https://learn.adafruit.com/modern-replacements-for-dht11-dht22-sensors/what-are-better-alternatives.   
+[^3]:“How to Connect dht11 Sensor with Arduino Uno.” Arduino Project Hub, https://create.arduino.cc/projecthub/pibots555/how-to-connect-dht11-sensor-with-arduino-uno-f4d239.  
+[^4]:Team, The Arduino. “What Is Arduino?: Arduino Documentation.” Arduino Documentation | Arduino Documentation, https://docs.arduino.cc/learn/starting-guide/whats-arduino.  
+[^5]:Tino. “Tino/PyFirmata: Python Interface for the Firmata (Http://Firmata.org/) Protocol. It Is Compliant with Firmata 2.1. Any Help with Updating to 2.2 Is Welcome. the Capability Query Is Implemented, but the Pin State Query Feature Not Yet.” GitHub, https://github.com/tino/pyFirmata. 
+[^6]:Python Geeks. “Advantages of Python: Disadvantages of Python.” Python Geeks, 26 June 2021, https://pythongeeks.org/advantages-disadvantages-of-python/. 
+[^7]: Real Python. “Python vs C++: Selecting the Right Tool for the Job.” Real Python, Real Python, 19 June 2021, https://realpython.com/python-vs-cpp/#memory-management. 
+[^8]: Emeritus. "What are the Key Pros and Cons of the Arduino Programming Language?" Emeritus, Emeritus, 25 January 2023, https://emeritus.org/blog/coding-arduino-programming-language.
+[^9]: Arduino. "Digital Pins." Arduino, Arduino, 5 December 2023, https://www.arduino.cc/reference/en/language/functions/digital-io/digitalwrite/.
+[^10]: Koronus. "print multiple variables amount in one line." Arduino Forum, Arduino, 6 May 2021, https://forum.arduino.cc/t/print-multiple-variables-amount-in-one-line/604071/9
 
