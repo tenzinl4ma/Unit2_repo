@@ -495,8 +495,41 @@ The goal of this technique is to remove any bias from the scale or units of the 
 ![Errorbar](https://github.com/user-attachments/assets/838b4b4b-e6de-4d02-bd19-8f5800826fdc)
 
 <h6 align="center">Error bar on hourly data</h6>
-
-
+```.python
+with open('dht11_data.csv', mode='r') as file:
+    reader = csv.reader(file)
+    next(reader)  # Skip the header row
+    for row in reader:
+        # Extract data
+```
+The above code is to reads temperature, humidity, and pressure data from a CSV 
+file, aggregates the data by hour, calculates statistical measures (mean, standard
+deviation, min, max, median), and finally visualizes this data using error bar 
+graphs in subplots. The code first open CSV file and reads data row by row 
+and store in repective variable.
+```.python
+temp_by_hour = defaultdict(list)
+for date, temp in temperature:
+    hour = date.replace(minute=0, second=0, microsecond=0)
+    temp_by_hour[hour].append(temp)
+```
+In above code the data is organized into hourly buckets using defaultdict 
+for each measurement, the minute, secodn and the microsecond ar eset to zero,
+allowing all measurements withing the same hour to be grouped together.
+```.python
+def basic_info(data):
+    mean = np.mean(data)
+    std = np.std(data)
+    min_val = np.min(data)
+    max_val = np.max(data)
+    median = np.median(data)
+    return mean, std, min_val, max_val, median
+```
+here the basic_info function computes statistical measure for the aggregated 
+data. for each hour it calculates the mean , standard deviation, minimun, 
+maximum and median.
+<h5>By using aggregated data and error bars, the graphs give a clearer picture of the variability and trends in the measurements. This is particularly useful when dealing with large datasets where individual readings might be less informative. </h>
+---
 
 **Success Criteria 3**
 
