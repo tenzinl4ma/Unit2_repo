@@ -611,7 +611,7 @@ Historical data are plotted in darker colors, while predicted ddata is
 plotted in brighter for easy visibility.
 
 **Sucess Criteria 7**
-<img  src="![css poster](https://github.com/user-attachments/assets/5a0743dd-53be-40b8-a45a-64787f280c49)" width="100px">
+![css poster](https://github.com/user-attachments/assets/5a0743dd-53be-40b8-a45a-64787f280c49)
 
 If you want to see more detail and clearer click this link which is saved in svg format.
 I created a simple yet informative poster that summarizes the key aspects of my project. As you can see, it highlights the environmental factors—temperature, humidity, and atmospheric pressure—that impact sleep quality. The poster includes graphical representations such as charts and plots that visualize the data, trends, and models we used for analysis. These visuals make it easier to understand the relationships between environmental conditions and sleep quality.
