@@ -609,6 +609,13 @@ and this code will generates predictions for hte next 12 hours. Three
 subplots are created for the temprerature, humidity and the pressure. 
 Historical data are plotted in darker colors, while predicted ddata is 
 plotted in brighter for easy visibility.
+
 **Sucess Criteria 7**
-![css poster](https://github.com/user-attachments/assets/5a0743dd-53be-40b8-a45a-64787f280c49)
+<img align="center" src="![css poster](https://github.com/user-attachments/assets/5a0743dd-53be-40b8-a45a-64787f280c49)">
+
+If you want to see more detail and clearer click this link which is saved in svg format.
+I created a simple yet informative poster that summarizes the key aspects of my project. As you can see, it highlights the environmental factors—temperature, humidity, and atmospheric pressure—that impact sleep quality. The poster includes graphical representations such as charts and plots that visualize the data, trends, and models we used for analysis. These visuals make it easier to understand the relationships between environmental conditions and sleep quality.
+
+The poster also outlines the recommendations for healthy levels of these parameters and emphasizes the importance of monitoring them in dormitory environments. It serves as a clear and concise summary of the work done, while also pointing out the potential for future improvements and research.
+
 
