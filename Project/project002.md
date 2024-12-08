@@ -576,3 +576,10 @@ approach highlights fluctuations and provides deeper insights into environmental
 variations over time.
 
 **Sucess Criteria 6**
+
+![Prediction](https://github.com/user-attachments/assets/72e50041-c54a-487c-a6b6-5db9776a917d)
+<h6 align="center"> 12 hours futher prediction of the data  </h6>>
+
+
+
+
