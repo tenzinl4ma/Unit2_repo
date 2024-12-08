@@ -1,4 +1,4 @@
-![CS poster](https://github.com/user-attachments/assets/1e2a5728-be12-4ce8-b324-ee697537950f)
+
 ![DHT11-Working](https://github.com/user-attachments/assets/2510f28a-fdd3-492f-8eb7-50981413d52f)
 <h6>Img by Jobit Joseph</h6>
 
