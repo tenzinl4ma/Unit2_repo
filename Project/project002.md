@@ -578,8 +578,34 @@ variations over time.
 **Sucess Criteria 6**
 
 ![Prediction](https://github.com/user-attachments/assets/72e50041-c54a-487c-a6b6-5db9776a917d)
-<h6 align="center"> 12 hours futher prediction of the data  </h6>>
+<h6 align="center"> 12 hours further prediction of the data  </h6>>
 
+```.python
+with open('dht11_data.csv', mode='r') as file:
+    reader = csv.reader(file)
+    next(reader)  # Skip the header row
+    for row in reader:
+        # Extract data
+df = df.resample('H').mean()  # Resample to hourly averages
 
+```
+Here we open the csv file and read through row by row and then the data is 
+resample to hourly averages. This will allows all mesurement within the same 
+hour to be grouped togethere for analysis.
 
-
+```.python
+model_temp = LinearRegression().fit(X, y_temp)
+model_hum = LinearRegression().fit(X, y_hum)
+model_press = LinearRegression().fit(X, y_press)
+predicted_temp = model_temp.predict(future_X)
+predicted_hum = model_hum.predict(future_X)
+predicted_press = model_press.predict(future_X)
+plt.plot(df.index, df['Temperature'], label='Historical Temperature', color='darkblue')
+plt.plot(predicted_df_temp.index, predicted_df_temp['Predicted Temperature'], label='Predicted Temperature', color='skyblue', linestyle='--')
+```
+Here we created a linerar model for temperature, humidity and pressure. 
+These models are trained using the historical datat to predict future values 
+and this code will generates predictions for hte next 12 hours. Three 
+subplots are created for the temprerature, humidity and the pressure. 
+Historical data are plotted in darker colors, while predicted ddata is 
+plotted in brighter for easy visibility.
