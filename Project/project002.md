@@ -492,9 +492,11 @@ By standardizing the data, I can transform the data to have a mean of 0 and a st
 
 The goal of this technique is to remove any bias from the scale or units of the data so that I can analyze and visualize the relative patterns and trends between the two sources. This helps in understanding how the pressure values from both sources fluctuate over time and allows me to accurately compare and visualize the two datasets on a single graph.
 
-![hourly_analysis.png](../project2-p/hourly_analysis.png)
-above is the linear model
+![hourly_analysis](https://github.com/user-attachments/assets/7876b60a-99fd-4b47-a5fe-395a635a5fd7)
 
-![hourly_quadratic_analysis_with_smaller_grid.png](../project2-p/hourly_quadratic_analysis_with_smaller_grid.png)
+<h6 align="center" >Linear model on the data every hour</h6>
 
-this is the quadratic model
+![hourly_quadratic_analysis_with_smaller_grid](https://github.com/user-attachments/assets/56af1afb-e583-4a97-80f3-1d0663ac6b56)
+
+<h6 align="center" >Quadratic model on the data every hour</h6>
+
