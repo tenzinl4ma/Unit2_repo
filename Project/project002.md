@@ -655,7 +655,8 @@ The poster also outlines the recommendations for healthy levels of these paramet
 
 # Criteria D: Functionality
 ---
-A 7 min video demonstrating the propsed solution with narration
+A 7 min video demonstrating the proposed solution with narration
+https://drive.google.com/file/d/17OoeMRAJa6WhDcoQbesV1XOc-voQWWLC/view?usp=drive_link
 ---
 
 ## Citation
