@@ -492,39 +492,12 @@ By standardizing the data, I can transform the data to have a mean of 0 and a st
 
 The goal of this technique is to remove any bias from the scale or units of the data so that I can analyze and visualize the relative patterns and trends between the two sources. This helps in understanding how the pressure values from both sources fluctuate over time and allows me to accurately compare and visualize the two datasets on a single graph.
 
-**Success Criteria 3**
-
-![hourly_analysis.png](../project2-p/hourly_analysis.png)
-A linear model was used to analyze trends in temperature, humidity, and pressure 
-over time, providing a simple yet effective way to understand how these variables 
-evolve hourly. By fitting a straight line to the data, the model highlights overall 
-patterns, such as gradual increases or decreases, which can influence sleep quality.
-It offers easy interpretability, with the slope indicating the rate of change and the 
-intercept representing the starting point. This approach simplifies data visualization, 
-as a baseline for comparison with non-linear models, and supports short-term predictions,
-making it ideal for monitoring environmental factors that impact dormitory conditions.
-```.python
-time, temperature, humidity, pressure = [], [], [], []
- Function to fit linear regression and plot
-def plot_with_linear_regression(ax, x, y, title, ylabel):
-    X = x.reshape(-1, 1)  # Reshape for sklearn
-    model = LinearRegression()
-    model.fit(X, y)
-    y_pred = model.predict(X)
-    ax.scatter(x, y, color='blue', label='Data Points')
-    ax.plot(x, y_pred, color='red', label='Linear Fit')
-    ax.set_title(title)
-    ax.set_xlabel('Time (Hour)')
-    ax.set_ylabel(ylabel)
-    ax.legend()
-    ax.grid(True)  # Enable grid for each subplot
+![hourly_analysis](https://github.com/user-attachments/assets/f7b2f6e8-ba84-432f-aa92-e190cb517a9c)
 
 
-```
-![hourly_quadratic_analysis_with_smaller_grid.png](../project2-p/hourly_quadratic_analysis_with_smaller_grid.png)
-The quadratic model fits a parabolic curve (𝑦 = 𝑎𝑥**2+𝑏𝑥+𝑐 ), capturing non-linear
-trends in temperature, humidity, and pressure. By transforming time data into 
-quadratic terms (e.g., time squared) and using LinearRegression, the code models
-curved patterns like rises and falls more effectively than a linear model. This 
-approach highlights fluctuations and provides deeper insights into environmental
-variations over time.
+<h6 align="center" >Linear model on the data every hour</h6>
+
+![hourly_quadratic_analysis_with_smaller_grid](https://github.com/user-attachments/assets/56af1afb-e583-4a97-80f3-1d0663ac6b56)
+
+<h6 align="center" >Quadratic model on the data every hour</h6>
+
