@@ -185,9 +185,9 @@ the atmospheric pressure from these readings.
 
 
 
-![flowdiagram1](https://github.com/user-attachments/assets/49f204e8-1046-46b2-b259-12c7099e88e0)
+![flowdiagram3](https://github.com/user-attachments/assets/f3d9f395-7841-486c-a8fe-d95e693c0720)
 
-<h6 align="center"> Diagram </h6>
+<h6 align="center"> Diagram  </h6>
 
 <img width="390" alt="flowchart" src="https://github.com/user-attachments/assets/66f65b02-9e73-4c41-b105-8f7faa646c09" />
 
