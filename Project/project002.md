@@ -192,7 +192,7 @@ the atmospheric pressure from these readings.
 <img width="390" alt="flowchart" src="https://github.com/user-attachments/assets/66f65b02-9e73-4c41-b105-8f7faa646c09" />
 
 
-<h6 align="center"> Diagramsadf </h6>
+<h6 align="center"> Diagram3 </h6>
 
 
 
