@@ -652,12 +652,30 @@ I created a simple yet informative poster that summarizes the key aspects of my 
 
 The poster also outlines the recommendations for healthy levels of these parameters and emphasizes the importance of monitoring them in dormitory environments. It serves as a clear and concise summary of the work done, while also pointing out the potential for future improvements and research.
 
+# Section D:  Poster and Evaluation
 
-# Criteria D: Functionality
----
-A 7 min video demonstrating the proposed solution with narration
-https://drive.google.com/file/d/17OoeMRAJa6WhDcoQbesV1XOc-voQWWLC/view?usp=drive_link
----
+## Video
+
+The project lacked a video demonstration due to time constraints. A future improvement plan involves creating a video to:
+
+- Showcase the system in action, from sensor data collection to the visualization interface.
+- Highlight the user-friendliness of the dashboard and its real-time features.
+
+## Reflection on Evaluation Criteria
+
+### Challenges Faced
+
+1. **Hardware Issues**:  
+   Sensors occasionally malfunctioned due to environmental factors like moisture or extreme temperatures. This was mitigated by adding protective casings and regular calibration.
+
+2. **Data Transmission Delays**:  
+   Latency in transmitting data between Arduino UNO and Raspberry Pi was resolved by optimizing serial communication protocols.
+
+3. **Scalability**:  
+   Initially, the system struggled with handling data from multiple rooms simultaneously. The issue was addressed by introducing a queue system for data processing on the server.  
+
+
+
 
 ## Citation
 
