@@ -179,9 +179,20 @@ the atmospheric pressure from these readings.
 
 ### Flow chart
 
-![Screenshot 2024-12-07 at 3 44 37 PM](https://github.com/user-attachments/assets/e3c6daef-2102-46a5-9e94-ad7e49a48e11)
+![flowdiagram1](https://github.com/user-attachments/assets/81baa6ad-ef38-486e-bd4c-6b419852dee6)
 
-#### Fig.4    The above flowchart shows the blinking light indicator with an infinite loop with no end. the light will blink 7 times in each loop.
+<h6 align="center"> Diagram illustrating reading the data from arduino to pycharm</h6>
+
+
+
+![flowdiagram1](https://github.com/user-attachments/assets/49f204e8-1046-46b2-b259-12c7099e88e0)
+
+<h6 align="center"> Diagram </h6>
+
+<img width="390" alt="flowchart" src="https://github.com/user-attachments/assets/66f65b02-9e73-4c41-b105-8f7faa646c09" />
+
+
+<h6 align="center"> Diagramsadf </h6>
 
 
 
